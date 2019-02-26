@@ -25,7 +25,7 @@ int main(void)
   pass[i++] = ch;
   write(STDOUT_FILENO, &echo, 1);
  }
- pass[i] = 0;
+ pass[i] = '\0';
 
  tcsetattr(STDIN_FILENO, TCSANOW, &oldterm);
  write(STDOUT_FILENO, "\n\nPassword: ", 12);

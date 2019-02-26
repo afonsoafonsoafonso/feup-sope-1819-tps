@@ -25,6 +25,7 @@ int main(void) {
         write(STDOUT_FILENO,&echo,1);
         i++;
     }
+    password[i] = '\0';
     tcsetattr(STDIN_FILENO, TCSANOW, &oldterm);
     write(STDOUT_FILENO,"\nTyped password: ",17);
     write(STDOUT_FILENO, password, strlen(password));
