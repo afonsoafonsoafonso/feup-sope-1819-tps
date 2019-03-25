@@ -1,17 +1,11 @@
 // PROGRAMA p3a.c 
 #define _POSIX_C_SOURCE 200809L
 
-#include <stdio.h> 
-#include <signal.h> 
-#include <unistd.h> 
 #include <stdlib.h>
-#include <time.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 int sentido;
 
