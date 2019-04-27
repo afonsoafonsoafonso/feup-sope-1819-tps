@@ -20,14 +20,14 @@ int main(int argc, char **argv) {
     if(pid > 0) {
         close(fd[WRITE]);
         dup2(fd[READ],STDIN_FILENO);
-        execlp("sort","sort");
+        execlp("sort","sort",NULL);
         exit(1);
     }
     else {
         close(fd[READ]);
         int file = open(argv[1],O_RDONLY);
         dup2(fd[WRITE],STDOUT_FILENO);
-        execlp("cat","cat",argv[1]);
+        execlp("cat","cat",argv[1],NULL);
     }
     return 0;
 }

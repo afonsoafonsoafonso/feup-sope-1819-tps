@@ -18,16 +18,16 @@ int main(int argc, char **argv) {
 
     //porque é que já não funciona se trocar o código do filho pelo do pai?
     if(pid > 0) {
-        close(fd[WRITE]);
-        dup2(fd[READ],STDIN_FILENO);
-        execlp("sort","sort");
-        exit(1);
-    }
-    else {
         close(fd[READ]);
         int file = open(argv[1],O_RDONLY);
         dup2(fd[WRITE],STDOUT_FILENO);
-        execlp("cat", "cat", argv[1]);
+        execlp("cat", "cat", argv[1],NULL);
+    }
+    else {
+        close(fd[WRITE]);
+        dup2(fd[READ],STDIN_FILENO);
+        execlp("sort","sort",NULL);
+        exit(1);
     }
     return 0;
 }
